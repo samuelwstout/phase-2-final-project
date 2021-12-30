@@ -2,9 +2,11 @@ import React from 'react'
 
 export const Map = () => {
     return (
+    <React.Fragment>
         <div>
-            <h1>Hey! I'm the Maaaaaaaap.</h1>
+            <p>Hey! I'm the Maaaaaaaap. Use map API or image with buttons idk. </p>
         </div>
+    </React.Fragment>
     )
 }
 export default Map;

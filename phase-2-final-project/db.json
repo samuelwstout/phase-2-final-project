@@ -8,13 +8,13 @@
  },
  {
     "id": 2,
-    "name": "Lou Malnati's",
+    "name": "Sam's Pizza",
     "location": "Chicago",
     "reviews": "Link to yelp"
 },
 {
     "id": 3,
-    "name": "Lou Malnati's",
+    "name": "Sam's better pizza",
     "location": "Chicago",
     "reviews": "Link to yelp"
 }

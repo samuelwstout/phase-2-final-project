@@ -2,9 +2,11 @@ import React from 'react'
 
 const Fav = () => {
     return (
+    <React.Fragment>
         <div>
-           <h1>Hey! I'm Fav.</h1>
+           <p>A list of favorite list items from search</p>
         </div>
+    </React.Fragment>
     )
 }
 
