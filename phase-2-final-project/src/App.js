@@ -1,7 +1,7 @@
 import React from 'react';
 import Search from './components/Search';
-import Browse from './components/Browse';
-import MyList from './components/MyList';
+import Map from './components/Map';
+import Fav from './components/Fav';
 import NavBar from './navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -11,8 +11,8 @@ const App = () => {
        <NavBar />
        <Routes>
           <Route path='/' element={<Search />} />
-          <Route path='/browse' element= {<Browse />} />
-          <Route path='/mylist' element={ <MyList />} />
+          <Route path='/browse' element= {<Map />} />
+          <Route path='/fav' element={ <Fav />} />
       </Routes>
     </Router>
   );

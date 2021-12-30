@@ -1,0 +1,22 @@
+{
+"restaurants": [
+ {
+    "id": 1,
+    "name": "Lou Malnati's",
+    "location": "Chicago",
+    "reviews": "Link to yelp"
+ },
+ {
+    "id": 2,
+    "name": "Lou Malnati's",
+    "location": "Chicago",
+    "reviews": "Link to yelp"
+},
+{
+    "id": 3,
+    "name": "Lou Malnati's",
+    "location": "Chicago",
+    "reviews": "Link to yelp"
+}
+]
+}
