@@ -1,12 +1,34 @@
-import React from 'react'
+import React, {useRef, useState, useEffect } from 'react';
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-export const Map = () => {
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreHRjcnlwdzd4N3Yyb211bnB3ajVjNzUifQ.lo9qYsVJl59ppjZWZELEMA';
+
+export const Map = () => {   
+
+    const mapContainer = useRef(null);
+    const map = useRef(null);
+    const [lng, setLng] = useState(-70.9);
+    const [lat, setLat] = useState(42.35);
+    const [zoom, setZoom] = useState(9);
+
+
+  useEffect(() => {
+   
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
+    });
+  });
+
     return (
-    <React.Fragment>
-        <div>
-            <p>Hey! I'm the Maaaaaaaap. Use map API or image with buttons idk. </p>
-        </div>
-    </React.Fragment>
-    )
+  
+    <div>
+        <div ref={mapContainer} className="map-container" />
+    </div>
+   
+    ) 
 }
 export default Map;

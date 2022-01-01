@@ -6,7 +6,10 @@ import NavBar from './components/navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { baseURL } from './Globals';
 
+
 const App = () => {
+
+
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
@@ -28,6 +31,7 @@ const App = () => {
   }, [])
 
   return (
+    <React.Fragment>
     <Router>
        <NavBar />
        <Routes>
@@ -36,7 +40,9 @@ const App = () => {
           <Route path='/fav' element={ <Fav />} />
       </Routes>
     </Router>
+    </React.Fragment>
   );
+
 }
 
 export default App;

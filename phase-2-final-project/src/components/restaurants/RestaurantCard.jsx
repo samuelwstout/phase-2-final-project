@@ -12,7 +12,7 @@ const RestaurantCard = ({ restaurant }) => {
        <h1>{restaurant.reviews}</h1>
         <button><a href="http://localhost:3000/map">MAP</a></button>
        <button><a href="http://localhost:3000/fav">FAV</a></button>
-        </ListItem>
+        </ListItem> 
         </div>
     )
 }
