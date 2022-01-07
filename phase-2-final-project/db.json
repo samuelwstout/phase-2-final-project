@@ -1,22 +1,22 @@
 {
-"restaurants": [
- {
-    "id": 1,
-    "name": "Lou Malnati's",
-    "location": "Chicago",
-    "reviews": "Link to yelp"
- },
- {
-    "id": 2,
-    "name": "",
-    "location": "Chicago",
-    "reviews": "Link to yelp"
-},
-{
-    "id": 3,
-    "name": "Sam's better pizza",
-    "location": "Chicago",
-    "reviews": "Link to yelp"
-}
-]
+  "restaurants": [
+    {
+      "name": "Lou Malnati's",
+      "location": "Chicago",
+      "reviews": "Link to yelp",
+      "id": 1
+    },
+    {
+      "name": "Gino's",
+      "location": "Chicago",
+      "reviews": "Link to yelp",
+      "id": 2
+    },
+    {
+      "name": "Sam's better pizza",
+      "location": "Chicago",
+      "reviews": "Link to yelp",
+      "id": 3
+    }
+  ]
 }

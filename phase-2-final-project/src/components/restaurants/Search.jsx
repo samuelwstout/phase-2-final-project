@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const Search = ({ restaurants }) => {
     const classes = useStyles();
     const restaurantCards = restaurants.map((restaurant => <RestaurantCard key= { restaurant.id } restaurant = {restaurant} /> ))
+    
     return (
         <div>
           <List component="nav" aria-label="secondary mailbox folders">

@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Search from './components/restaurants/Search';
 import Map from './components/restaurants/Map';
-import Fav from './components/restaurants/Fav';
+import Add from './components/restaurants/Add';
 import NavBar from './components/navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { baseURL } from './Globals';
+import { finalURL } from './components/restaurants/Globals';
 
 
 const App = () => {
-
-
+  
+  //GET request for Search page
   const [restaurants, setRestaurants] = useState([]);
-
   useEffect(() => {
 
-    // fetch to db.json
-    // "set restaurants to array of restaurants from db.json"
-
-    // fetch(baseURL + '/restaurants');
-    //  .then(resp => resp.json())
-    //  .then(data => console.log('data', data))
-
     const fetchRestaurants = async () => {
-      const response = await fetch(baseURL + '/restaurants');
+      const response = await fetch(finalURL);
       const data = await response.json();
       setRestaurants(data);
     }
@@ -30,6 +22,7 @@ const App = () => {
     fetchRestaurants();
   }, [])
 
+ 
   return (
     <React.Fragment>
     <Router>
@@ -37,7 +30,7 @@ const App = () => {
        <Routes>
           <Route path='/' element={<Search restaurants={restaurants} />} />
           <Route path='/map' element= {<Map />} />
-          <Route path='/fav' element={ <Fav />} />
+          <Route path='/add' element={ <Add  />} />
       </Routes>
     </Router>
     </React.Fragment>

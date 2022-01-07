@@ -30,7 +30,7 @@ export default function ButtonAppBar() {
         <Toolbar>
           <Button color="inherit" component={ Link } to='/'>Search</Button>
           <Button color="inherit" component={ Link } to='/map'>Map</Button>
-          <Button color="inherit" component={ Link } to='/fav'>Fav</Button>
+          <Button color="inherit" component={ Link } to='/add'>Add</Button>
         </Toolbar>
         </Container>
       </AppBar>
