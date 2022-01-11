@@ -1,12 +1,35 @@
 import React, {useState} from 'react'; 
 import { finalURL } from './Globals';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  form: {
+    marginTop: 20,
+    marginLeft: 50,
+    
+  },
+  input: {
+    width: 700,
+    marginBottom: 8,
+  },
+ 
+  submitButton: {
+    position: "absolute",
+    top: 145,
+    left: 370,
+  }
+  });
 
 const AddCard = () => {
+
+  const classes = useStyles();
   
   const [addCardData, setAddCardData] = useState({
   name: '',
-  location: '',
-  reviews: '',
+  phone: '',
+  linkToGoogleMaps: '',
+  website: '',
+
 });
   const handleChange = (e) => {
     setAddCardData({
@@ -27,26 +50,40 @@ const AddCard = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form className={classes.form} onSubmit={handleSubmit}>
+      <input 
+        className={classes.input}
         type="text"
         id="name"
         value={addCardData.name}
+        placeholder='name'
         onChange={handleChange}
       />
        <input
+       className={classes.input}
         type="text"
-        id="location"
-        value={addCardData.location}
+        id="phone"
+        value={addCardData.phone}
+        placeholder='phone'
         onChange={handleChange}
       />
-       <input
+        <input
+        className={classes.input}
         type="text"
-        id="reviews"
-        value={addCardData.reviews}
+        id="linkToGoogleMaps"
+        value={addCardData.linkToGoogleMaps}
+        placeholder='link to Google Maps'
         onChange={handleChange}
       />
-       <input type="submit" value="Submit" />
+          <input
+          className={classes.input}
+        type="text"
+        id="website"
+        placeholder='website'
+        value={addCardData.website}
+        onChange={handleChange}
+      />
+       <input className={classes.submitButton} type="submit" value="Submit" />
     </form>
   )
 }

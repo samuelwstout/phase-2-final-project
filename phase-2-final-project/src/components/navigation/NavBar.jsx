@@ -12,11 +12,20 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
   },
+  listAndAdd: {
+    left: 490,
+  },
+  logo: {
+    left: 490,
+  },
+  backgroundColor: {
+    backgroundColor: "#8f0606"
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -25,12 +34,12 @@ export default function ButtonAppBar() {
   return (
    
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.backgroundColor}>
       <Container>
         <Toolbar>
-          <Button color="inherit" component={ Link } to='/'>Search</Button>
-          <Button color="inherit" component={ Link } to='/map'>Map</Button>
-          <Button color="inherit" component={ Link } to='/add'>Add</Button>
+          <Button className={classes.logo}color="inherit" component={ Link } to='/'>Map</Button>
+          <Button className={classes.listAndAdd} color="inherit" component={ Link } to='/list'>List</Button>
+          <Button className={classes.listAndAdd} color="inherit" component={ Link } to='/add'>Add</Button>
         </Toolbar>
         </Container>
       </AppBar>

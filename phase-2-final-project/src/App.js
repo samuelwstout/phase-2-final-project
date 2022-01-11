@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Search from './components/restaurants/Search';
-import Map from './components/restaurants/Map';
+import Home from './components/restaurants/Home';
 import Add from './components/restaurants/Add';
 import NavBar from './components/navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -28,8 +28,8 @@ const App = () => {
     <Router>
        <NavBar />
        <Routes>
-          <Route path='/' element={<Search restaurants={restaurants} />} />
-          <Route path='/map' element= {<Map />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/list' element= {<Search restaurants={restaurants} />} />
           <Route path='/add' element={ <Add  />} />
       </Routes>
     </Router>

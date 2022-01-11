@@ -3,20 +3,19 @@ import AddCard from './AddCard';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-  }));
+const useStyles = makeStyles({
+  submitForm: {
+    marginTop: 30,
+    marginLeft: 320,
+  }
+  });
 
 const Add = () => {
     const classes = useStyles();
     
 return (
         <div>
-       <List component="nav" aria-label="secondary mailbox folders">
+       <List className={classes.submitForm} component="nav" aria-label="secondary mailbox folders">
             <AddCard />
         </List>
         </div>
