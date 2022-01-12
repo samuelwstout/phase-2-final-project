@@ -1,6 +1,8 @@
 import React, {useRef, useState, useEffect } from 'react';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { makeStyles } from '@material-ui/core/styles';
+import Tooltip from '../Tooltip';
+import ReactDOM from 'react-dom';
 
 const useStyles = makeStyles({
    mapStyling: {
@@ -18,41 +20,74 @@ const useStyles = makeStyles({
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreHRjcnlwdzd4N3Yyb211bnB3ajVjNzUifQ.lo9qYsVJl59ppjZWZELEMA';
 
-export const Home = () => {   
+const Home = () => {   
+    //material UI styles
     const classes = useStyles();
-    const mapContainer = useRef(null);
+    //mapbox
+    const mapContainerRef = useRef(null);
+    const tooltipRef = useRef(new mapboxgl.Popup({ offset: 15 }));
     const map = useRef(null);
+    //coordinates
     const [lng, setLng] = useState(-87.623177);
     const [lat, setLat] = useState(41.881832);
     const [zoom, setZoom] = useState(10);
-
-    useEffect(() => {
-
-        if (!map.current) return; // wait for map to initialize
-        map.current.on('move', () => {
-        setLng(map.current.getCenter().lng.toFixed(4));
-        setLat(map.current.getCenter().lat.toFixed(4));
-        setZoom(map.current.getZoom().toFixed(2));
-        });
-    });
-
-    useEffect(() => {
-   
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
+    
+     // Initialize map when component mounts
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
       style: 'mapbox://styles/samwstout/ckyai3aaq3ezs15olccds13oj',
       center: [lng, lat],
       zoom: zoom
     });
+    
+     // change cursor to pointer when user hovers over a clickable feature
+     map.on('mouseenter', e => {
+        if (e.features.length) {
+          map.getCanvas().style.cursor = 'pointer';
+        }
+      });
+
+        // reset cursor to default when user is no longer hovering over a clickable feature
+    map.on('mouseleave', () => {
+        map.getCanvas().style.cursor = '';
+      });
+
+
+       // add tooltip when users mouse move over a point
+    map.on('click', e => {
+        const features = map.queryRenderedFeatures(e.point, {
+            layers: ['deep_dish']
+        });
+        if (features.length) {
+          const feature = features[0];
+
+
+        // Create tooltip node
+            const tooltipNode = document.createElement('div');
+            ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
+
+        // Set tooltip on map
+        tooltipRef.current
+          .setLngLat(e.lngLat)
+          .setDOMContent(tooltipNode)
+          .addTo(map);
+        }
+
 });
+
+ // Clean up on unmount
+ return () => map.remove();
+}, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    
     return (
     <div>
         <div className={classes.textAboveMap}>
         <h1 className={classes.heading}>Find Chicago Deep Dish</h1>
         </div>
         <div className={classes.mapStyling}>
-            <div ref={mapContainer} className="map-container" />
+            <div ref={mapContainerRef} className="map-container" />
         </div>
     </div>
     ) 
