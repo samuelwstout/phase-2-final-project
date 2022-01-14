@@ -1,9 +1,10 @@
 import React, {useRef, useState, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from 'mapbox-gl'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '../Tooltip';
 import ReactDOM from 'react-dom';
 
+//Material UI styling 
 const useStyles = makeStyles({
    mapStyling: {
     marginTop: 120,
@@ -18,10 +19,12 @@ const useStyles = makeStyles({
    }
   });
 
+//Mapbox token
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreHRjcnlwdzd4N3Yyb211bnB3ajVjNzUifQ.lo9qYsVJl59ppjZWZELEMA';
 
+
 const Home = () => {   
-    //material UI styles
+    //material UI styling
     const classes = useStyles();
     //mapbox
     const mapContainerRef = useRef(null);
@@ -32,7 +35,7 @@ const Home = () => {
     const [lat, setLat] = useState(41.881832);
     const [zoom, setZoom] = useState(10);
     
-     // Initialize map when component mounts
+// Initialize map when component mounts
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
