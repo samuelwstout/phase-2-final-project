@@ -83,7 +83,7 @@ const Home = () => {
  return () => map.remove();
 }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    
+
     return (
     <div>
         <div className={classes.textAboveMap}>
