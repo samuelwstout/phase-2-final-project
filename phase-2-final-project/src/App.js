@@ -9,7 +9,7 @@ import { finalURL } from './components/restaurants/Globals';
 
 const App = () => {
   
-  //GET request for Search page
+  //GET request for the List page
   const [restaurants, setRestaurants] = useState([]);
   useEffect(() => {
 

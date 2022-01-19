@@ -31,9 +31,9 @@ const Home = () => {
     const tooltipRef = useRef(new mapboxgl.Popup({ offset: 15 }));
     const map = useRef(null);
     //coordinates
-    const [lng, setLng] = useState(-87.623177);
-    const [lat, setLat] = useState(41.881832);
-    const [zoom, setZoom] = useState(10);
+    const [lng] = useState(-87.623177);
+    const [lat] = useState(41.881832);
+    const [zoom] = useState(10);
     
 // Initialize map when component mounts
   useEffect(() => {

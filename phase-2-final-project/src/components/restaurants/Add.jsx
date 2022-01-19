@@ -12,7 +12,6 @@ const useStyles = makeStyles({
 
 const Add = () => {
     const classes = useStyles();
-    
 return (
         <div>
        <List className={classes.submitForm} component="nav" aria-label="secondary mailbox folders">

@@ -37,7 +37,7 @@ const AddCard = () => {
       [e.target.id]: e.target.value,
     });
   }
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch((finalURL), {

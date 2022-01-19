@@ -8,7 +8,7 @@ An explanation of the web app and its code is in this video:
 
 [![IMAGE_ALT](https://img.youtube.com/vi/I6GIBKT3CBY/0.jpg)](https://youtu.be/I6GIBKT3CBY)
 
-Chicago Deep Dish Finder is a restaurant locator exclusively for restaurants that serves deep dish pizza. There are three routes: map(/), list(/list), and add(/add). Mapbox GL JS, an external map API, is incorporated in the map page. For the list of restaurants, I used json-server as a mock backend for GET (list page) and POST (add page) requests. 
+Chicago Deep Dish Finder is a restaurant locator exclusively for restaurants that serve deep dish pizza. There are three routes: map(/), list(/list), and add(/add). Mapbox GL JS, an external map API, is incorporated in the map page. For the list of restaurants, I used json-server as a mock backend for GET (list page) and POST (add page) requests. 
 
 To know how to add interactive points to a Mapbox map specifically in React, refer to this [blog post](https://medium.com/@samuelwstout/222529725367).
 
