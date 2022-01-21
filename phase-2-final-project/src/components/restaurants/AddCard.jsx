@@ -1,12 +1,13 @@
 import React, {useState} from 'react'; 
-import { finalURL } from './Globals';
 import { makeStyles } from '@material-ui/core/styles';
+
 
 const useStyles = makeStyles({
   form: {
-    marginTop: 20,
-    marginLeft: 50,
-    
+display: 'flex',
+flexDirection: 'column',
+width: '400px',
+marginLeft: 40,
   },
   input: {
     width: 700,
@@ -16,11 +17,11 @@ const useStyles = makeStyles({
   submitButton: {
     position: "absolute",
     top: 145,
-    left: 370,
+    left: 365,
   }
   });
 
-const AddCard = () => {
+const AddCard = ({handleSubmit}) => {
 
   const classes = useStyles();
   
@@ -31,32 +32,22 @@ const AddCard = () => {
   website: '',
 
 });
+
   const handleChange = (e) => {
     setAddCardData({
-      ...addCardData,
-      [e.target.id]: e.target.value,
-    });
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch((finalURL), {
-  method: "POST",
-  headers: {
-    "Content-Type":"application/json"
-  },
-    body: JSON.stringify(addCardData),
-    });
+      ...addCardData, [e.target.id]: e.target.value});
   }
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={(e) => handleSubmit(e, addCardData)}  >
       <input 
         className={classes.input}
         type="text"
         id="name"
         value={addCardData.name}
         placeholder='name'
+        name='name'
+        aria-label='name'
         onChange={handleChange}
       />
        <input
@@ -65,6 +56,8 @@ const AddCard = () => {
         id="phone"
         value={addCardData.phone}
         placeholder='phone'
+        name='phone'
+        aria-label='phone'
         onChange={handleChange}
       />
         <input
@@ -73,6 +66,8 @@ const AddCard = () => {
         id="linkToGoogleMaps"
         value={addCardData.linkToGoogleMaps}
         placeholder='link to Google Maps'
+        name='link to Google Maps'
+        aria-label='link to Google Maps'
         onChange={handleChange}
       />
           <input
@@ -80,6 +75,8 @@ const AddCard = () => {
         type="text"
         id="website"
         placeholder='website'
+        name='website'
+        aria-label='website'
         value={addCardData.website}
         onChange={handleChange}
       />

@@ -12,7 +12,7 @@ const RestaurantCard = ({ restaurant }) => {
            <li><a href={restaurant.website}>Website</a></li>
            <li><a href={restaurant.linkToGoogleMaps}>Link to Google Maps</a></li>
        </ul>
-        </ListItem> 
+        </ListItem>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Search from './components/restaurants/Search';
+import RestaurantList from './components/restaurants/RestaurantList';
 import Home from './components/restaurants/Home';
 import Add from './components/restaurants/Add';
 import NavBar from './components/navigation/NavBar';
@@ -30,7 +30,7 @@ const App = () => {
        <NavBar />
        <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/list' element= {<Search restaurants={restaurants} />} />
+          <Route path='/list' element= {<RestaurantList restaurants={restaurants} />} />
           <Route path='/add' element={ <Add  />} />
       </Routes>
     </Router>
