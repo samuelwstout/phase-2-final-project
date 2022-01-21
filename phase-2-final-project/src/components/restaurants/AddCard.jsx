@@ -1,6 +1,6 @@
 import React, {useState} from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
-
+import { finalURL } from './Globals';
 
 const useStyles = makeStyles({
   form: {
@@ -21,7 +21,7 @@ marginLeft: 40,
   }
   });
 
-const AddCard = ({handleSubmit}) => {
+const AddCard = () => {
 
   const classes = useStyles();
   
@@ -38,8 +38,20 @@ const AddCard = ({handleSubmit}) => {
       ...addCardData, [e.target.id]: e.target.value});
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch((finalURL), {
+     method: "POST",
+     headers: {
+       "Content-Type":"application/json"
+     },
+     body: JSON.stringify(addCardData),
+   });
+  }
+
   return (
-    <form className={classes.form} onSubmit={(e) => handleSubmit(e, addCardData)}  >
+    <form className={classes.form} onSubmit={handleSubmit}  >
       <input 
         className={classes.input}
         type="text"
