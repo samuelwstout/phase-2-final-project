@@ -21,7 +21,7 @@ marginLeft: 40,
   }
   });
 
-const AddCard = () => {
+const AddCard = ({handleAddToList}) => {
 
   const classes = useStyles();
   
@@ -38,20 +38,23 @@ const AddCard = () => {
       ...addCardData, [e.target.id]: e.target.value});
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    fetch((finalURL), {
-     method: "POST",
-     headers: {
-       "Content-Type":"application/json"
-     },
-     body: JSON.stringify(addCardData),
-   });
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   fetch((finalURL), {
+  //    method: "POST",
+  //    headers: {
+  //      "Content-Type":"application/json"
+  //    },
+  //    body: JSON.stringify(addCardData),
+  //  });
+ 
+  // }
+
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}  >
+    <form className={classes.form} onSubmit={e => handleAddToList(e, addCardData)} >
       <input 
         className={classes.input}
         type="text"
