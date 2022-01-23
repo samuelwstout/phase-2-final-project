@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import RestaurantCard from './RestaurantCard';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import { finalURL } from './Globals';
+ 
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,9 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RestaurantList = ({ restaurants }) => {
-
-    const [addList, setAddList] = useState()
+const RestaurantList = ({restaurants, listOfSubmissions}) => {
 
     const classes = useStyles();
 
@@ -25,24 +23,13 @@ const RestaurantList = ({ restaurants }) => {
       </div>
     ))
 
-   const handleAddToList = (e, addObj) => {
-     e.preventDefault();
-     setAddList([addObj, ...addList])
-     fetch((finalURL), {
-      method: "POST",
-      headers: {
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify(addObj),
-    });
-   }
+   
     return (
         <div>
           <List key="restaurantCards" component="nav" aria-label="secondary mailbox folders">
              { restaurantCards }
+           { listOfSubmissions }
           </List>
-          <List key="addedRestaurants" component="nav" aria-label="secondary mailbox folders" handleAddToList={handleAddToList}></List>
-         
         </div>
   )
 }

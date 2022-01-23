@@ -1,13 +1,16 @@
-import React, {useState} from 'react'; 
+import React from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
-import { finalURL } from './Globals';
+
 
 const useStyles = makeStyles({
-  form: {
-display: 'flex',
-flexDirection: 'column',
-width: '400px',
-marginLeft: 40,
+
+form: {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '400px',
+  marginLeft: 380,
+  marginTop: 70
+
   },
   input: {
     width: 700,
@@ -16,50 +19,30 @@ marginLeft: 40,
  
   submitButton: {
     position: "absolute",
-    top: 145,
-    left: 365,
+    top: 260,
+    left: 688,
   }
   });
 
-const AddCard = ({handleAddToList}) => {
+const AddForm = ({
+  handleChange,
+  handleSubmit,
+  name,
+  phone,
+  linkToGoogleMaps,
+  website
 
+}) => {
   const classes = useStyles();
-  
-  const [addCardData, setAddCardData] = useState({
-  name: '',
-  phone: '',
-  linkToGoogleMaps: '',
-  website: '',
-
-});
-
-  const handleChange = (e) => {
-    setAddCardData({
-      ...addCardData, [e.target.id]: e.target.value});
-  }
-
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   fetch((finalURL), {
-  //    method: "POST",
-  //    headers: {
-  //      "Content-Type":"application/json"
-  //    },
-  //    body: JSON.stringify(addCardData),
-  //  });
- 
-  // }
-
 
   return (
-    <form className={classes.form} onSubmit={e => handleAddToList(e, addCardData)} >
+    <div>
+    <form className={classes.form} onSubmit={handleSubmit} >
       <input 
         className={classes.input}
         type="text"
         id="name"
-        value={addCardData.name}
+        value={name}
         placeholder='name'
         name='name'
         aria-label='name'
@@ -69,7 +52,7 @@ const AddCard = ({handleAddToList}) => {
        className={classes.input}
         type="text"
         id="phone"
-        value={addCardData.phone}
+        value={phone}
         placeholder='phone'
         name='phone'
         aria-label='phone'
@@ -79,7 +62,7 @@ const AddCard = ({handleAddToList}) => {
         className={classes.input}
         type="text"
         id="linkToGoogleMaps"
-        value={addCardData.linkToGoogleMaps}
+        value={linkToGoogleMaps}
         placeholder='link to Google Maps'
         name='link to Google Maps'
         aria-label='link to Google Maps'
@@ -92,12 +75,13 @@ const AddCard = ({handleAddToList}) => {
         placeholder='website'
         name='website'
         aria-label='website'
-        value={addCardData.website}
+        value={website}
         onChange={handleChange}
       />
        <input className={classes.submitButton} type="submit" value="Submit" />
     </form>
+    </div>
   )
 }
 
-export default AddCard;
+export default AddForm;
