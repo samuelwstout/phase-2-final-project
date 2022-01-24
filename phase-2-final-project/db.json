@@ -69,6 +69,13 @@
       "linkToGoogleMaps": "https://g.page/BartolisPizzeria?share",
       "website": "https://www.bartolispizzeria.com/",
       "id": 10
+    },
+    {
+      "name": "hey there",
+      "phone": "",
+      "linkToGoogleMaps": "",
+      "website": "",
+      "id": 11
     }
   ]
 }

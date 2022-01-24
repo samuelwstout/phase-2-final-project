@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
       display: "block",
       width: 520,
       marginBottom: 10,
-      marginLeft: 465   
+      marginLeft: 455   
   },
   heading: {
       textAlign: "left"
@@ -88,9 +88,9 @@ const listOfSubmissions = submittedData.map((data,index)=> {
       <ListItem className={classes.listitems}>
        <h1 className={classes.heading}>{data.name}</h1>
        <div className={classes.buttons}>
-         <button href={data.website}>Website</button>
-         <button href={data.linkToGoogleMaps}>Directions</button>
-         <button href={`tel:${data.phone}`}>Call</button>
+         <button><a href={data.website}>Website</a></button>
+         <button><a href={data.linkToGoogleMaps}>Directions</a></button>
+         <button><a href={`tel:${data.phone}`}>Call</a></button>
         </div>
        </ListItem>
     </div>

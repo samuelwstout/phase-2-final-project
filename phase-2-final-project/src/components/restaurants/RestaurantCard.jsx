@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
         display: "block",
         width: 520,
         marginBottom: 10,
-        marginLeft: 465   
+        marginLeft: 455   
     },
     heading: {
         textAlign: "left"
@@ -36,9 +36,9 @@ const RestaurantCard = ({ restaurant }) => {
        <h1 className={classes.heading}>{restaurant.name}</h1>
 
        <div className={classes.buttons}>
-        <button href={restaurant.website}>Website</button>
-        <button href={restaurant.linkToGoogleMaps}>Directions</button>
-        <button href={`tel:${restaurant.phone}`}>Call</button>
+        <button><a href={restaurant.website}>Website</a></button>
+        <button><a href={restaurant.linkToGoogleMaps}>Directions</a></button>
+        <button><a href={`tel:${restaurant.phone}`}>Call</a></button>
        </div>
         </ListItem>
         </div>
