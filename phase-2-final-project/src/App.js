@@ -6,10 +6,34 @@ import NavBar from './components/navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { finalURL } from './components/restaurants/Globals';
 import ListItem from '@material-ui/core/ListItem';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(() => ({
+  listitems: {
+      border: "1px solid",
+      marginBottom: 30
+
+  },
+  div: {
+      display: "block",
+      width: 520,
+      marginBottom: 10,
+      marginLeft: 465   
+  },
+  heading: {
+      textAlign: "left"
+  },
+  buttons: {
+      display: "block",
+      width: .5,
+      marginLeft: "auto",
+      marginRight: 70
+  }
+}));
 
 const App = () => {
-  
+  const classes = useStyles();
+
   const [restaurants, setRestaurants] = useState([]);
 
   
@@ -60,19 +84,18 @@ const App = () => {
 
 const listOfSubmissions = submittedData.map((data,index)=> {
   return (
-    <div key={index}>
-      <ListItem>
-       <h1>{data.name}</h1>
-       <ul>
-           <li><a href={`tel:${data.phone}`}>Call</a></li>
-           <li><a href={data.website}>Website</a></li>
-           <li><a href={data.linkToGoogleMaps}>Link to Google Maps</a></li>
-       </ul>
+    <div className={classes.div} key={index}>
+      <ListItem className={classes.listitems}>
+       <h1 className={classes.heading}>{data.name}</h1>
+       <div className={classes.buttons}>
+         <button href={data.website}>Website</button>
+         <button href={data.linkToGoogleMaps}>Directions</button>
+         <button href={`tel:${data.phone}`}>Call</button>
+        </div>
        </ListItem>
     </div>
   )
 })
-
 
  
   return (

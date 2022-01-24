@@ -6,7 +6,9 @@ const Tooltip = ({ feature }) => {
   return (
     <div id={`tooltip-${id}`}>
        <h3>{feature.properties.name}</h3>
-       <button><a href={feature.properties.website}>Go to Site</a></button>
+       <button><a href={feature.properties.website}>Website</a></button>
+       <button><a href={feature.properties.linktoGoogleMaps}>Directions</a></button>
+       <button><a href={`tel:${feature.properties.phone}`}>Call</a></button>
     </div>
   );
 };
