@@ -17,15 +17,32 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  listAndAdd: {
-    left: 490,
+  map: {
+    left: 169,
+    top: -30,
   },
-  logo: {
-    left: 490,
+  list: {
+    left: 105,
+    top: 0,
+  },
+  add: {
+    left: 40,
+    top: 30,
   },
   backgroundColor: {
-    backgroundColor: "#8f0606"
+    backgroundColor: "#8f0606",
+    height: "140px",
+  },
+  deepdish: {
+    marginLeft: -90,
+  },
+  text: {
+    marginLeft: 240,
+    marginBottom: 25,
+    fontFamily: "DejaVu Sans Mono, monospace",
+    fontSize: "18px"
   }
+  
 }));
 
 export default function NavBar() {
@@ -37,13 +54,14 @@ export default function NavBar() {
       <AppBar position="static" className={classes.backgroundColor}>
       <Container>
         <Toolbar>
-          <Button className={classes.logo}color="inherit" component={ Link } to='/'>Map</Button>
-          <Button className={classes.listAndAdd} color="inherit" component={ Link } to='/list'>List</Button>
-          <Button className={classes.listAndAdd} color="inherit" component={ Link } to='/add'>Add</Button>
+        <Button className={classes.deepdish} color="inherit" component={ Link } to='/'> <img src="DiscoverDeepDish.png"></img></Button>
+          <p className={classes.text}>Community-driven resource for discovering high-quality, authentic Chicago-style deep dish pizza around the world.</p>
+          <Button className={classes.map}color="inherit" component={ Link } to='/'>Map</Button>
+          <Button className={classes.list} color="inherit" component={ Link } to='/list'>List</Button>
+          <Button className={classes.add} color="inherit" component={ Link } to='/add'>Add</Button>
         </Toolbar>
         </Container>
       </AppBar>
-     
     </div>
   );
 }

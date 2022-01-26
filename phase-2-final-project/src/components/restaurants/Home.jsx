@@ -7,16 +7,15 @@ import ReactDOM from 'react-dom';
 //Material UI styling 
 const useStyles = makeStyles({
    mapStyling: {
-    marginTop: 120,
+    marginTop: 50,
     marginLeft: 100,
     marginRight: 100,
+    
    },
    heading: {
     marginTop: 90,
    }, 
-   textAboveMap: {
-    textAlign: "center",
-   }
+
   });
 
 //Mapbox token
@@ -86,9 +85,6 @@ const Home = () => {
 
     return (
     <div>
-        <div className={classes.textAboveMap}>
-        <h1 className={classes.heading}>Find Chicago Deep Dish</h1>
-        </div>
         <div className={classes.mapStyling}>
             <div ref={mapContainerRef} className="map-container" />
         </div>

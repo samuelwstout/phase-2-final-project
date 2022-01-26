@@ -1,47 +1,42 @@
-import React from 'react';
+import {useState} from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(() => ({
-    listitems: {
-        border: "1px solid",
-        marginBottom: 30
 
-    },
-    div: {
-        display: "block",
-        width: 520,
-        marginBottom: 10,
-        marginLeft: 455   
-    },
-    heading: {
-        textAlign: "left"
-    },
-    buttons: {
-        display: "block",
-        width: .5,
-        marginLeft: "auto",
-        marginRight: 70
-    }
+heading: {
+    fontFamily: "Courier, monospace",
+},
+popup: {
+    marginLeft: "30px"
+}
+
 }));
 
 const RestaurantCard = ({ restaurant }) => {
+
+    const [open, setOpen] = useState(false);
   
     const classes = useStyles();
 
-    return (
-        <div className={classes.div}> 
-        <ListItem className={classes.listitems} >
-       <h1 className={classes.heading}>{restaurant.name}</h1>
+    const handleListClick = () => {
+        setOpen(!open)
+    }
 
-       <div className={classes.buttons}>
-        <button><a href={restaurant.website}>Website</a></button>
-        <button><a href={restaurant.linkToGoogleMaps}>Directions</a></button>
-        <button><a href={`tel:${restaurant.phone}`}>Call</a></button>
-       </div>
+    return (
+    <div className={classes.outerdiv}>
+        <div className={classes.div}> 
+        <ListItem >
+       <button onClick={handleListClick}><h1 className={classes.heading}>{restaurant.name} | Chicago, IL</h1></button>
         </ListItem>
         </div>
+        {open && (
+            <div className={classes.popup}>
+                <p>Hi</p>
+            </div>
+        )}
+    </div>
     )
 }
 
