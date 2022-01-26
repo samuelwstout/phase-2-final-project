@@ -6,12 +6,13 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 
   listdiv: {
-  
-    height: "auto",
     columnCount: 2,
-
-
+    border: "solid"
+  },
+  items: {
+    display: "inline"
   }
+  
 
 }));
 

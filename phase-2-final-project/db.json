@@ -2,6 +2,7 @@
   "restaurants": [
     {
       "name": "Gino's East",
+      "city": "Chicago",
       "phone": "3122663337",
       "linkToGoogleMaps": "https://g.page/GinosEastMagnificentMile?share",
       "website": "https://www.ginoseast.com/",
@@ -9,6 +10,7 @@
     },
     {
       "name": "My Pi Pizza",
+      "city": "Chicago",
       "phone": "7733946900",
       "linkToGoogleMaps": "https://goo.gl/maps/wdyG3kqRpQoxrMto8",
       "website": "https://www.mypiepizza.com/?y_source=1_MTQ3OTc5OTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
@@ -16,6 +18,7 @@
     },
     {
       "name": "Pizzeria Ora Chicago",
+      "city": "Chicago",
       "phone": "3124641872",
       "linkToGoogleMaps": "https://g.page/PizzeriaOraChicago?share",
       "website": "https://www.pizzeriaora.com/",
@@ -23,6 +26,7 @@
     },
     {
       "name": "River North - Lou Malnati's Pizzeria",
+      "city": "Chicago",
       "phone": "3128289800",
       "linkToGoogleMaps": "https://goo.gl/maps/rKrr9MyX5ehyFmfDA",
       "website": "https://www.loumalnatis.com/chicago-river-north",
@@ -30,6 +34,7 @@
     },
     {
       "name": "Nancy's Pizza",
+      "city": "Chicago",
       "phone": "7738831977",
       "linkToGoogleMaps": "https://goo.gl/maps/aeGG1EVqrSetwTY38",
       "website": "https://slicelife.com/restaurants/il/chicago/60657/nancy-s-pizza-2930-n-broadway-st-chicago/menu",
@@ -37,6 +42,7 @@
     },
     {
       "name": "Pizzeria Uno",
+      "city": "Chicago",
       "phone": "3123211000",
       "linkToGoogleMaps": "https://goo.gl/maps/51GnWieMXhhtN9sh6",
       "website": "https://www.pizzeriaunodue.com/start-order/761.php",
@@ -44,6 +50,7 @@
     },
     {
       "name": "Labriola Chicago",
+      "city": "Chicago",
       "phone": "3129553100",
       "linkToGoogleMaps": "https://goo.gl/maps/3e9uSyJVG5VFqDKh6",
       "website": "https://www.labriolacafe.com/",
@@ -51,6 +58,7 @@
     },
     {
       "name": "Giordano's",
+      "city": "Chicago",
       "phone": "3128421100",
       "linkToGoogleMaps": "https://goo.gl/maps/hrQ9CEpkV4DCfEtA6",
       "website": "https://orders.giordanos.com/#/menu/7108",
@@ -58,6 +66,7 @@
     },
     {
       "name": "Lincoln Park - Lou Malnati's Pizzeria",
+      "city": "Chicago",
       "phone": "7738324030",
       "linkToGoogleMaps": "https://goo.gl/maps/XY3pHA7uTrJrnMYM6",
       "website": "http://order.loumalnatis.com/",
@@ -65,6 +74,7 @@
     },
     {
       "name": "Bartoli's Pizzeria",
+      "city": "Chicago",
       "phone": "7732480455",
       "linkToGoogleMaps": "https://g.page/BartolisPizzeria?share",
       "website": "https://www.bartolispizzeria.com/",

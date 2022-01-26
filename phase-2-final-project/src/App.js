@@ -36,14 +36,19 @@ const App = () => {
 
   const [addCardData, setAddCardData] = useState({
     name: '',
+    city: '',
     phone: '',
     linkToGoogleMaps: '',
     website: '',
   
   });
   
-
+  const [open, setOpen] = useState(false);
   const [submittedData, setSubmittedData] = useState([]);
+
+  const handleListClick = () => {
+    setOpen(!open)
+}
 
   const handleChange = (e) => {
     setAddCardData({
@@ -62,19 +67,25 @@ const App = () => {
  })
  .then(r => r.json()) 
  .then(data => {
-  debugger
   const submittedArray = [...submittedData, data];
   setSubmittedData(submittedArray);
-  setAddCardData({name: '', phone: '', linkToGoogleMaps: '', website: ''});
+  setAddCardData({name: '', city: '', phone: '', linkToGoogleMaps: '', website: ''});
  })
   }
 
 const listOfSubmissions = submittedData.map((data,index)=> {
   return (
+    <div>
     <div className={classes.div} key={index}>
       <ListItem>
-       <h1 className={classes.heading}>{data.name} | Chicago, IL</h1>
+       <button onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
        </ListItem>
+    </div>
+    {open && (
+            <div className={classes.popup}>
+                <p>Hi</p>
+            </div>
+        )}
     </div>
   )
 })
@@ -91,6 +102,7 @@ const listOfSubmissions = submittedData.map((data,index)=> {
             <AddForm handleChange={handleChange}
               handleSubmit={handleSubmit}
               name={addCardData.name}
+              city={addCardData.city}
               phone={addCardData.phone}
               linkToGoogleMaps={addCardData.linkToGoogleMaps}
               website={addCardData.website}  

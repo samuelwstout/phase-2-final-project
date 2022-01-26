@@ -9,7 +9,7 @@ heading: {
     fontFamily: "Courier, monospace",
 },
 popup: {
-    marginLeft: "30px"
+    marginLeft: ""
 }
 
 }));
@@ -28,7 +28,7 @@ const RestaurantCard = ({ restaurant }) => {
     <div className={classes.outerdiv}>
         <div className={classes.div}> 
         <ListItem >
-       <button onClick={handleListClick}><h1 className={classes.heading}>{restaurant.name} | Chicago, IL</h1></button>
+       <button onClick={handleListClick}><h1 className={classes.heading}>{restaurant.name} | {restaurant.city}</h1></button>
         </ListItem>
         </div>
         {open && (

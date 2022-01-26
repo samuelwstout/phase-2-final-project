@@ -19,7 +19,7 @@ form: {
  
   submitButton: {
     position: "absolute",
-    top: 340,
+    top: 365,
     left: 710,
   }
   });
@@ -28,6 +28,7 @@ const AddForm = ({
   handleChange,
   handleSubmit,
   name,
+  city,
   phone,
   linkToGoogleMaps,
   website
@@ -43,9 +44,19 @@ const AddForm = ({
         type="text"
         id="name"
         value={name}
-        placeholder='name'
+        placeholder='restaurant name'
         name='name'
         aria-label='name'
+        onChange={handleChange}
+      />
+       <input 
+        className={classes.input}
+        type="text"
+        id="city"
+        value={city}
+        placeholder='city'
+        name='city'
+        aria-label='city'
         onChange={handleChange}
       />
        <input
