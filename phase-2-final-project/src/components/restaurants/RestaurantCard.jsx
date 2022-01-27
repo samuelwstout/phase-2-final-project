@@ -6,10 +6,26 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 
 heading: {
-    fontFamily: "Courier, monospace",
+    fontFamily: "Roboto, sans-serif",
+    width: "fit-content",
 },
 popup: {
-    marginLeft: ""
+    textAlign: "left",
+    marginLeft: "18px",
+    width: "fit-content",
+},
+buttons: {
+   display: "inline-block",
+   padding: "0.35em 1.2em",
+   border: "0.1em solid #FFFFFF",
+   margin: "0 0.3em 0.3em 0",
+   borderRadius: "0.12em",
+   fontFamily: "Roboto, sans-serif",
+   textDecoration: "none"
+},
+link: {
+    color: "black",
+    textDecoration: "none",
 }
 
 }));
@@ -33,7 +49,9 @@ const RestaurantCard = ({ restaurant }) => {
         </div>
         {open && (
             <div className={classes.popup}>
-                <p>Hi</p>
+                <button className={classes.buttons}><a className={classes.link} href={`tel:${restaurant.phone}`}>Call</a></button>
+                <button className={classes.buttons}><a className={classes.link} href={restaurant.linkToGoogleMaps}>View on map</a></button>
+                <button className={classes.buttons}><a className={classes.link} href={restaurant.website}>Go to site</a></button>
             </div>
         )}
     </div>

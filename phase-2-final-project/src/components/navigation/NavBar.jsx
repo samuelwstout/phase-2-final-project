@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
     height: "140px",
   },
   deepdish: {
-    marginLeft: -90,
+    marginLeft: -100,
   },
   text: {
-    marginLeft: 240,
+    marginLeft: 210,
     marginBottom: 25,
     fontFamily: "DejaVu Sans Mono, monospace",
     fontSize: "18px"
@@ -55,7 +55,7 @@ export default function NavBar() {
       <Container>
         <Toolbar>
         <Button className={classes.deepdish} color="inherit" component={ Link } to='/'> <img src="DiscoverDeepDish.png"></img></Button>
-          <p className={classes.text}>Community-driven resource for discovering high-quality, authentic Chicago-style deep dish pizza around the world.</p>
+          <p className={classes.text}>Resource for discovering high-quality, authentic Chicago-style deep dish pizza.</p>
           <Button className={classes.map}color="inherit" component={ Link } to='/'>Map</Button>
           <Button className={classes.list} color="inherit" component={ Link } to='/list'>List</Button>
           <Button className={classes.add} color="inherit" component={ Link } to='/add'>Add</Button>

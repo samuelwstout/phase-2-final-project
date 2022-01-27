@@ -7,10 +7,9 @@ const useStyles = makeStyles(() => ({
 
   listdiv: {
     columnCount: 2,
-    border: "solid"
   },
   items: {
-    display: "inline"
+    display: "inline" 
   }
   
 

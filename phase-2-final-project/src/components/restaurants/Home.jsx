@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   });
 
 //Mapbox token
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreHRjcnlwdzd4N3Yyb211bnB3ajVjNzUifQ.lo9qYsVJl59ppjZWZELEMA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreXdoaG00YTA4azUzMW13am1xeTN4OXEifQ.LVNsBeK22t4Ll1047n2Cvw';
 
 
 const Home = () => {   

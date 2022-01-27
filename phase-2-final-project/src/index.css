@@ -30,3 +30,6 @@ code {
     margin: 12px;
     border-radius: 4px;
     }
+  .mapboxgl-popup-content {
+    width: 277px;
+  }

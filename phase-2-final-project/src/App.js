@@ -20,7 +20,6 @@ const App = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   
- //GET request for the List page
   useEffect(() => {
 
     const fetchRestaurants = async () => {
