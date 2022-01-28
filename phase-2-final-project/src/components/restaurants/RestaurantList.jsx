@@ -3,15 +3,14 @@ import RestaurantCard from './RestaurantCard';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 
+
 const useStyles = makeStyles(() => ({
 
-  listdiv: {
-    columnCount: 2,
-  },
   items: {
-    display: "inline" 
-  }
-  
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap", 
+  },
 
 }));
 

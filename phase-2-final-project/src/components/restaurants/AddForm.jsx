@@ -9,7 +9,7 @@ form: {
   flexDirection: 'column',
   width: '400px',
   marginLeft: 380,
-  marginTop: 70
+  marginTop: 50
 
   },
   input: {
@@ -19,8 +19,12 @@ form: {
  
   submitButton: {
     position: "absolute",
-    top: 365,
+    top: 430,
     left: 710,
+  },
+  formHeading: {
+    marginLeft: 510,
+    marginTop: 60,
   }
   });
 
@@ -38,6 +42,7 @@ const AddForm = ({
 
   return (
     <div>
+    <h3 className={classes.formHeading}>Please submit recommendations if you would like!</h3>
     <form className={classes.form} onSubmit={handleSubmit} >
       <input 
         className={classes.input}

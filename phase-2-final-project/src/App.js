@@ -10,6 +10,28 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
   
+  heading: {
+    fontFamily: "Roboto, sans-serif",
+    
+},
+popup: {
+    textAlign: "left",
+    marginLeft: "18px",
+    
+},
+buttons: {
+   display: "inline-block",
+   padding: "0.35em 1.2em",
+   border: "0.1em solid #FFFFFF",
+   margin: "0 0.3em 0.3em 0",
+   borderRadius: "0.12em",
+   fontFamily: "Roboto, sans-serif",
+   textDecoration: "none"
+},
+link: {
+    color: "black",
+    textDecoration: "none",
+}
 
 
 }));
@@ -82,7 +104,11 @@ const listOfSubmissions = submittedData.map((data,index)=> {
     </div>
     {open && (
             <div className={classes.popup}>
-                <p>Hi</p>
+                 <div className={classes.popup}>
+                <button className={classes.buttons}><a className={classes.link} href={`tel:${data.phone}`}>Call</a></button>
+                <button className={classes.buttons}><a className={classes.link} href={data.linkToGoogleMaps}>View on map</a></button>
+                <button className={classes.buttons}><a className={classes.link} href={data.website}>Go to site</a></button>
+            </div>
             </div>
         )}
     </div>

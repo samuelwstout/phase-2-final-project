@@ -8,17 +8,20 @@ const useStyles = makeStyles(() => ({
 heading: {
     fontFamily: "Roboto, sans-serif",
     width: "fit-content",
+    display: "inline-block",
+    
 },
 popup: {
     textAlign: "left",
     marginLeft: "18px",
-    width: "fit-content",
+ 
 },
 buttons: {
+    
    display: "inline-block",
    padding: "0.35em 1.2em",
    border: "0.1em solid #FFFFFF",
-   margin: "0 0.3em 0.3em 0",
+    margin: "0 0.3em 0.3em 0",
    borderRadius: "0.12em",
    fontFamily: "Roboto, sans-serif",
    textDecoration: "none"
@@ -48,11 +51,14 @@ const RestaurantCard = ({ restaurant }) => {
         </ListItem>
         </div>
         {open && (
+         
             <div className={classes.popup}>
                 <button className={classes.buttons}><a className={classes.link} href={`tel:${restaurant.phone}`}>Call</a></button>
                 <button className={classes.buttons}><a className={classes.link} href={restaurant.linkToGoogleMaps}>View on map</a></button>
                 <button className={classes.buttons}><a className={classes.link} href={restaurant.website}>Go to site</a></button>
             </div>
+    
+       
         )}
     </div>
     )
