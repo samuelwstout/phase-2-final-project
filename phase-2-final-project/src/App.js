@@ -4,7 +4,7 @@ import Home from './components/restaurants/Home';
 import AddForm from './components/restaurants/AddForm';
 import NavBar from './components/navigation/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { finalURL } from './components/restaurants/Globals';
+import { finalURL } from './components/restaurants/dataUrl';
 import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -72,20 +72,21 @@ const App = () => {
 
   //POST Request for adding new restaurant list items to db.json
   const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch((finalURL), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(addCardData)
-    })
+      e.preventDefault();
+
+      fetch((finalURL), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+          body: JSON.stringify(addCardData)
+      })
       .then(r => r.json())
       .then(data => {
         const submittedArray = [...submittedData, data]; //submittedData acts initially as an empty object before form submission
         setSubmittedData(submittedArray); //Sets 'data' to submittedData
         setAddCardData({ name: '', city: '', phone: '', linkToGoogleMaps: '', website: '' }); //Clear inputs after submission
-      })
+      }) 
   };
 
   //Renders each form submission ({listOfSubmissions}) along with 'restaurants' in RestaurantList.jsx

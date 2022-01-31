@@ -10,8 +10,8 @@ const useStyles = makeStyles({
     marginTop: 50,
     marginLeft: 100,
     marginRight: 100,
-    
    },
+   
    heading: {
     marginTop: 90,
    }, 

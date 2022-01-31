@@ -4,10 +4,7 @@ import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
 
 
-const useStyles = makeStyles( {
-button: {
-  
-},
+const useStyles = makeStyles({
 
 form: {
   display: 'flex',
@@ -16,7 +13,6 @@ form: {
   marginLeft: 380,
   marginTop: 50,
  
-
   },
   input: {
     width: 700,
@@ -50,8 +46,8 @@ const AddForm = ({
   phone,
   linkToGoogleMaps,
   website
-
 }) => {
+  
   const classes = useStyles();
 
   return (
