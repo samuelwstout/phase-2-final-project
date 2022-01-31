@@ -6,7 +6,7 @@ Flatiron School Phase 2 (React) Project
 
 An explanation of the web app and its code is in this video: 
 
-[![IMAGE_ALT](https://img.youtube.com/vi/I6GIBKT3CBY/0.jpg)](https://youtu.be/I6GIBKT3CBY)
+[![Link to video](https://i9.ytimg.com/vi/YvNAu23xI9g/mq1.jpg?sqp=COC34Y8G&rs=AOn4CLBw2vBPsZLh8Qk3Wqt21GS2Fgrb4Q)](https://youtu.be/YvNAu23xI9g)
 
 Chicago Deep Dish Finder is a restaurant locator exclusively for restaurants that serve deep dish pizza. There are three routes: map(/), list(/list), and add(/add). Mapbox GL JS, an external map API, is incorporated in the map page. For the list of restaurants, I used json-server as a mock backend for GET (list page) and POST (add page) requests. 
 
