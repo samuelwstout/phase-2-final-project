@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import RestaurantList from './components/restaurants/RestaurantList';
 import Home from './components/restaurants/Home';
 import AddForm from './components/restaurants/AddForm';
@@ -8,7 +8,7 @@ import { finalURL } from './components/restaurants/Globals';
 import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
 
-//Styling
+
 const useStyles = makeStyles(() => ({
   heading: {
     fontFamily: "Roboto, sans-serif",
@@ -32,9 +32,6 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-
-
-//App component
 const App = () => {
   const classes = useStyles(); //Styling
   const [restaurants, setRestaurants] = useState([]); //State for db.json GET Request + displaying initial data
@@ -58,7 +55,7 @@ const App = () => {
     website: '',
   });
   
-  const [open, setOpen] = useState(false); //State that records restaurant list button click
+  const [open, setOpen] = useState(false); //State that records restaurant list item click
   const [submittedData, setSubmittedData] = useState([]); //State that records user input result after form submission
 
   //Toggles result for restaurant list item click
@@ -66,14 +63,14 @@ const App = () => {
     setOpen(!open)
   }
 
-  //Grabs values from the input elements and updates those values to addCardData
+  //Grabs values from the input elements and sets those values to addCardData's state
   const handleChange = (e) => {
     setAddCardData({
       ...addCardData, [e.target.id]: e.target.value
     });
   }
 
-  //POST Request for adding result to db.json
+  //POST Request for adding new restaurant list items to db.json
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch((finalURL), {
@@ -87,38 +84,36 @@ const App = () => {
       .then(data => {
         const submittedArray = [...submittedData, data]; //submittedData acts initially as an empty object before form submission
         setSubmittedData(submittedArray); //Sets 'data' to submittedData
-        setAddCardData({ name: '', city: '', phone: '', linkToGoogleMaps: '', website: '' }); //Reset form after submission
+        setAddCardData({ name: '', city: '', phone: '', linkToGoogleMaps: '', website: '' }); //Clear inputs after submission
       })
-  }
+  };
 
-  
   //Renders each form submission ({listOfSubmissions}) along with 'restaurants' in RestaurantList.jsx
   const listOfSubmissions = submittedData.map((data, index) => {
-    
-    return (
-      <div>
-        <div className={classes.div} key={index}>
-          <ListItem>
-            <button onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
-          </ListItem>
-        </div>
-        {open && (
-          <div className={classes.popup}>
+
+        return (
+          <div>
+            <div className={classes.div} key={index}>
+              <ListItem>
+              <button onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
+              </ListItem>
+            </div>
+            {open && (
+              
             <div className={classes.popup}>
               <button className={classes.buttons}><a className={classes.link} href={`tel:${data.phone}`}>Call</a></button>
               <button className={classes.buttons}><a className={classes.link} href={data.linkToGoogleMaps}>View on map</a></button>
               <button className={classes.buttons}><a className={classes.link} href={data.website}>Go to site</a></button>
             </div>
-          </div>
-        )}
+
+            )}
       </div>
     )
-  })
+  });
 
-
-//Establishes Routing
+//Establishes Routing from react-router-dom
   return (
-    <React.Fragment>
+    <>
       <Router>
         <NavBar />
         <Routes>
@@ -136,9 +131,8 @@ const App = () => {
           />
         </Routes>
       </Router>
-    </React.Fragment>
+    </>
   );
-
-}
+};
 
 export default App;

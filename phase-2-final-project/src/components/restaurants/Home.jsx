@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect } from 'react';
+import {useRef, useState, useEffect} from 'react';
 import mapboxgl from 'mapbox-gl'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '../Tooltip';
