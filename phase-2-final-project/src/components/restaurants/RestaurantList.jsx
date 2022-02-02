@@ -21,13 +21,13 @@ const RestaurantList = ({restaurants, listOfSubmissions}) => {
 
     const restaurantCards = restaurants.map((restaurant => 
       <div>
-      <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+      <RestaurantCard key={restaurants.id} restaurant={restaurant} />
       </div>
     ))
 
     return (
-        <div key="list" className={classes.listdiv}>
-          <List className={classes.items} key="restaurantCards" component="nav" aria-label="secondary mailbox folders">
+        <div className={classes.listdiv}>
+          <List className={classes.items} component="nav" aria-label="secondary mailbox folders">
              { restaurantCards }
            { listOfSubmissions }
           </List>

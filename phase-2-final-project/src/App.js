@@ -9,6 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
 const useStyles = makeStyles(() => ({
   heading: {
     fontFamily: "Roboto, sans-serif",
@@ -90,13 +91,13 @@ const App = () => {
   };
 
   //Renders each form submission ({listOfSubmissions}) along with 'restaurants' in RestaurantList.jsx
-  const listOfSubmissions = submittedData.map((data, index) => {
+  const listOfSubmissions = submittedData.map((data) => {
 
         return (
-          <div>
-            <div className={classes.div} key={index}>
+          <div key={submittedData.id}>
+            <div className={classes.div}>
               <ListItem>
-              <button onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
+              <button  onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
               </ListItem>
             </div>
             {open && (
@@ -119,7 +120,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/list' element={<RestaurantList key="list" restaurants={restaurants} listOfSubmissions={listOfSubmissions} />} />
+          <Route path='/list' element={<RestaurantList key={restaurants.id} restaurants={restaurants} listOfSubmissions={listOfSubmissions} />} />
           <Route path='/add' element={
             <AddForm handleChange={handleChange}
               handleSubmit={handleSubmit}
