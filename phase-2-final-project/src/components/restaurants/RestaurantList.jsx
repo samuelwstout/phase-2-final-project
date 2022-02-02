@@ -20,8 +20,8 @@ const RestaurantList = ({restaurants, listOfSubmissions}) => {
 
 
     const restaurantCards = restaurants.map((restaurant => 
-      <div>
-      <RestaurantCard key={restaurants.id} restaurant={restaurant} />
+      <div key={restaurant.id}>
+      <RestaurantCard restaurant={restaurant} />
       </div>
     ))
 

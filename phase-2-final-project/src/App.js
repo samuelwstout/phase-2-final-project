@@ -94,7 +94,7 @@ const App = () => {
   const listOfSubmissions = submittedData.map((data) => {
 
         return (
-          <div key={submittedData.id}>
+          <div key={data.id}>
             <div className={classes.div}>
               <ListItem>
               <button  onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
@@ -120,7 +120,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/list' element={<RestaurantList key={restaurants.id} restaurants={restaurants} listOfSubmissions={listOfSubmissions} />} />
+          <Route path='/list' element={<RestaurantList key={restaurants.id} restaurants={restaurants} key={submittedData.id} listOfSubmissions={listOfSubmissions} />} />
           <Route path='/add' element={
             <AddForm handleChange={handleChange}
               handleSubmit={handleSubmit}
