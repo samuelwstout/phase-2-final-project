@@ -1,4 +1,3 @@
-import React from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
@@ -52,64 +51,65 @@ const AddForm = ({
 
   return (
     <div>
-    <h3 className={classes.formHeading}>Please submit recommendations if you would like!</h3>
-    <form className={classes.form} onSubmit={handleSubmit} >
 
-      <InputBase
-       
-        classes={{ input: 'input'}}
-        className={classes.input}
-        type="text"
-        id="name"
-        value={name}
-        placeholder='restaurant name'
-        name='name'
-        aria-label='name'
-        onChange={handleChange}
-      />
-       <InputBase
-        className={classes.input}
-        type="text"
-        id="city"
-        value={city}
-        placeholder='city'
-        name='city'
-        aria-label='city'
-        onChange={handleChange}
-      />
-       <InputBase
-       className={classes.input}
-        type="text"
-        id="phone"
-        value={phone}
-        placeholder='phone'
-        name='phone'
-        aria-label='phone'
-        onChange={handleChange}
-      />
+      <h3 className={classes.formHeading}>Please submit recommendations if you would like!</h3>
+
+      <form className={classes.form} onSubmit={handleSubmit} >
+
+        <InputBase
+          classes={{ input: 'input'}}
+          className={classes.input}
+          type="text"
+          id="name"
+          value={name}
+          placeholder='restaurant name'
+          name='name'
+          aria-label='name'
+          onChange={handleChange}
+        />
+        <InputBase
+          className={classes.input}
+          type="text"
+          id="city"
+          value={city}
+          placeholder='city'
+          name='city'
+          aria-label='city'
+          onChange={handleChange}
+        />
         <InputBase
         className={classes.input}
-        type="text"
-        id="linkToGoogleMaps"
-        value={linkToGoogleMaps}
-        placeholder='link to Google Maps'
-        name='link to Google Maps'
-        aria-label='link to Google Maps'
-        onChange={handleChange}
-      />
+          type="text"
+          id="phone"
+          value={phone}
+          placeholder='phone'
+          name='phone'
+          aria-label='phone'
+          onChange={handleChange}
+        />
           <InputBase
           className={classes.input}
-        type="text"
-        id="website"
-        placeholder='website'
-        name='website'
-        aria-label='website'
-        value={website}
-        onChange={handleChange}
-      />
-       <Button classes={classes.button} className={classes.submitButton}  type="submit" value="Submit">Submit</Button>
-    </form>
-    </div>
+          type="text"
+          id="linkToGoogleMaps"
+          value={linkToGoogleMaps}
+          placeholder='link to Google Maps'
+          name='link to Google Maps'
+          aria-label='link to Google Maps'
+          onChange={handleChange}
+        />
+            <InputBase
+            className={classes.input}
+          type="text"
+          id="website"
+          placeholder='website'
+          name='website'
+          aria-label='website'
+          value={website}
+          onChange={handleChange}
+        />
+        <Button classes={classes.button} className={classes.submitButton}  type="submit" value="Submit">Submit</Button>
+      </form>
+  </div>
   )
 }
 

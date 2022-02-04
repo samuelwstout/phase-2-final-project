@@ -9,8 +9,9 @@ import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
+//Styling for listOfSubmissions
 const useStyles = makeStyles(() => ({
+
   heading: {
     fontFamily: "Roboto, sans-serif",
   },
@@ -31,22 +32,30 @@ const useStyles = makeStyles(() => ({
     color: "black",
     textDecoration: "none",
   }
+
 }));
 
 const App = () => {
+
   const classes = useStyles(); //Styling
-  const [restaurants, setRestaurants] = useState([]); //State for db.json GET Request + displaying initial data
+
+  const [restaurants, setRestaurants] = useState([]); //State for GET Request + displaying initial data
   
+
   //GET Request
   useEffect(() => {
+
     const fetchRestaurants = async () => {
+
       const response = await fetch(finalURL);
       const data = await response.json();
       setRestaurants(data);
+
     }
     fetchRestaurants();
   }, []);
   
+
   //State that records user input on the form as they type
   const [addCardData, setAddCardData] = useState({
     name: '',
@@ -56,7 +65,9 @@ const App = () => {
     website: '',
   });
   
+
   const [open, setOpen] = useState(false); //State that records restaurant list item click
+
   const [submittedData, setSubmittedData] = useState([]); //State that records user input result after form submission
 
   //Toggles result for restaurant list item click
@@ -90,6 +101,7 @@ const App = () => {
       }) 
   };
 
+
   //Renders each form submission ({listOfSubmissions}) along with 'restaurants' in RestaurantList.jsx
   const listOfSubmissions = submittedData.map((data) => {
 
@@ -97,30 +109,29 @@ const App = () => {
           <div key={data.id}>
             <div className={classes.div}>
               <ListItem>
-              <button  onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
+                <button onClick={handleListClick}><h1 className={classes.heading}>{data.name} | {data.city}</h1></button>
               </ListItem>
             </div>
-            {open && (
-              
+            {open && ( //Conditional rendering for popup after heading click
             <div className={classes.popup}>
               <button className={classes.buttons}><a className={classes.link} href={`tel:${data.phone}`}>Call</a></button>
               <button className={classes.buttons}><a className={classes.link} href={data.linkToGoogleMaps}>View on map</a></button>
               <button className={classes.buttons}><a className={classes.link} href={data.website}>Go to site</a></button>
             </div>
-
             )}
       </div>
     )
   });
 
-//Establishes Routing from react-router-dom
+
+//Routing
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/list' element={<RestaurantList key={restaurants.id} restaurants={restaurants} key={submittedData.id} listOfSubmissions={listOfSubmissions} />} />
+          <Route path='/list' element={<RestaurantList restaurants={restaurants} listOfSubmissions={listOfSubmissions} />} />
           <Route path='/add' element={
             <AddForm handleChange={handleChange}
               handleSubmit={handleSubmit}
