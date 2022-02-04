@@ -33,8 +33,8 @@ const Tooltip = ({ feature }) => {
     <div className={classes.popup} id={`tooltip-${id}`}>
        <h3>{feature.properties.name}</h3>
        <button className={classes.buttons}><a className={classes.link} href={`tel:${feature.properties.phone}`}>Call</a></button>
-       <button className={classes.buttons}><a className={classes.link} href={feature.properties.linkToGoogleMaps}>View on map</a></button>
-       <button className={classes.buttons}><a className={classes.link} href={feature.properties.website}>Go on site</a></button>
+       <button className={classes.buttons}><a className={classes.link} href={feature.properties.linkToGoogleMaps} target='_blank'>View on map</a></button>
+       <button className={classes.buttons}><a className={classes.link} href={feature.properties.website} target='_blank'>Go on site</a></button>
     </div>
   );
 };

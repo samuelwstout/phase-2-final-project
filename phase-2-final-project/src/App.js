@@ -44,13 +44,11 @@ const App = () => {
 
   //GET Request
   useEffect(() => {
-
+    
     const fetchRestaurants = async () => {
-
       const response = await fetch(finalURL);
       const data = await response.json();
       setRestaurants(data);
-
     }
     fetchRestaurants();
   }, []);
@@ -83,24 +81,26 @@ const App = () => {
   }
 
   //POST Request for adding new restaurant list items to db.json
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
       e.preventDefault();
 
-      fetch((finalURL), {
+      const settings = {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
           body: JSON.stringify(addCardData)
-      })
-      .then(r => r.json())
-      .then(data => {
+      };
+      try {
+        const fetchResponse = await fetch(finalURL, settings);
+        const data = await fetchResponse.json();
         const submittedArray = [...submittedData, data]; //submittedData acts initially as an empty object before form submission
         setSubmittedData(submittedArray); //Sets 'data' to submittedData
         setAddCardData({ name: '', city: '', phone: '', linkToGoogleMaps: '', website: '' }); //Clear inputs after submission
-      }) 
+      } catch (e) {
+        return e;
+      }
   };
-
 
   //Renders each form submission ({listOfSubmissions}) along with 'restaurants' in RestaurantList.jsx
   const listOfSubmissions = submittedData.map((data) => {
@@ -114,9 +114,9 @@ const App = () => {
             </div>
             {open && ( //Conditional rendering for popup after heading click
             <div className={classes.popup}>
-              <button className={classes.buttons}><a className={classes.link} href={`tel:${data.phone}`}>Call</a></button>
-              <button className={classes.buttons}><a className={classes.link} href={data.linkToGoogleMaps}>View on map</a></button>
-              <button className={classes.buttons}><a className={classes.link} href={data.website}>Go to site</a></button>
+              <button className={classes.buttons}><a className={classes.link} href={`tel:${data.phone}`} target='_blank'>Call</a></button>
+              <button className={classes.buttons}><a className={classes.link} href={data.linkToGoogleMaps} target='_blank'>View on map</a></button>
+              <button className={classes.buttons}><a className={classes.link} href={data.website} target='_blank'>Go to site</a></button>
             </div>
             )}
       </div>

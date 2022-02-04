@@ -50,8 +50,8 @@ const RestaurantCard = ({ restaurant }) => {
             {open && (
                 <div className={classes.popup}>
                     <button className={classes.buttons}><a className={classes.link} href={`tel:${restaurant.phone}`}>Call</a></button>
-                    <button className={classes.buttons}><a className={classes.link} href={restaurant.linkToGoogleMaps}>View on map</a></button>
-                    <button className={classes.buttons}><a className={classes.link} href={restaurant.website}>Go to site</a></button>
+                    <button className={classes.buttons}><a className={classes.link} href={restaurant.linkToGoogleMaps} target='_blank'>View on map</a></button>
+                    <button className={classes.buttons}><a className={classes.link} href={restaurant.website} target='_blank'>Go to site</a></button>
                 </div>
             )}
         </div>
