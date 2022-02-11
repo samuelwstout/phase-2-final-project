@@ -79,6 +79,14 @@
       "linkToGoogleMaps": "https://g.page/BartolisPizzeria?share",
       "website": "https://www.bartolispizzeria.com/",
       "id": 10
+    },
+    {
+      "name": "Sam's pizza",
+      "city": "Chicago",
+      "phone": "",
+      "linkToGoogleMaps": "",
+      "website": "",
+      "id": 11
     }
   ]
 }
