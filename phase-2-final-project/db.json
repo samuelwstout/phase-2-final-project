@@ -87,6 +87,14 @@
       "linkToGoogleMaps": "",
       "website": "",
       "id": 11
+    },
+    {
+      "name": "Testing",
+      "city": "",
+      "phone": "",
+      "linkToGoogleMaps": "",
+      "website": "",
+      "id": 12
     }
   ]
 }

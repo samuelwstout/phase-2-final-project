@@ -1,5 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
-import mapboxgl from 'mapbox-gl'; 
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '../Tooltip';
 import ReactDOM from 'react-dom';
@@ -20,8 +21,9 @@ const useStyles = makeStyles({
 
 });
 
+
 //Mapbox token
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNreXdoaG00YTA4azUzMW13am1xeTN4OXEifQ.LVNsBeK22t4Ll1047n2Cvw';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftd3N0b3V0IiwiYSI6ImNsMHUxdTU2ajBqNWczZHBiNWx0MWJna2wifQ.dIWmWtAhj1M110seB95Wtw';
 
 
 const Home = () => {  
